@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  padding: 32px 0;
+  background-color: #111827;
+  color: #fff;
+}
+
+.pages-container,
+.main-container {
+  max-width: 1170px;
+  margin: auto;
+  padding: 0 16px;
+}
+
+.pages-container {
+  margin-bottom: 32px;
+}
+
+.pages {
+  list-style-type: none;
+  display: flex;
+  gap: 16px;
+}
+
+.page {
+  width: 48px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.page.active {
+  background-color: #1c64f2;
+  color: #fff;
+  border: none;
+}
+
+.text-block-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.text-block-inp {
+  background-color: #374151;
+  border: 1px solid #4b5563;
+  outline: none;
+  padding: 16px;
+  height: 180px;
+  width: 100%;
+  border-radius: 4px;
+  resize: none;
+  color: #fff;
+}
+
+.text-block-submit-btn,
+.ctc-btn {
+  width: 160px;
+  padding: 16px;
+  background-color: #1c64f2;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.main-container-bottom {
+  display: flex;
+  gap: 128px;
+  margin-top: 48px;
+}
+
+.indexes-wrapper {
+  flex-basis: 50%;
+  text-align: center;
+}
+.text-blocks-wrapper {
+  flex-basis: 50%;
+  text-align: left;
+}
+
+.indexes-heading,
+.text-blocks-heading {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.indexes-list {
+  list-style: none;
+  overflow-y: auto;
+}
+
+.text-blocks-list {
+  max-width: calc(100vw - 32px); /* Adjust according to your padding */
+  overflow-x: auto;
+  overflow-wrap: break-word; /* Add this line */
+}
+
+.indexes-item,
+.text-blocks-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: #111827;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+
+}
+
+.indexes-item-content {
+  width: 220px; /* Fixed width to accommodate 20 characters */
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  padding: 8px;
+  word-wrap: break-word;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.text-blocks-item-content {
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  padding: 16px;
+  word-wrap: break-word; /* Enable word wrapping */
+}
+
+.move-up-down-icons,
+.delete-icon {
+  display: flex;
+}
+
+.move-up-icon,
+.move-down-icon,
+.delete-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.move-up-icon:hover,
+.move-down-icon:hover,
+.delete-icon:hover {
+  color: #1c64f2;
+}
+
+.ctc-item {
+  display: block;
+  text-align: center;
+  margin-top: 16px; /* Adjust margin as needed */
+}
+
+.page {
+  font-size: 16px; /* Adjusted font size for bigger text */
+  padding-left: 10px; /* Add padding to the left to push the number to the left */
+  padding-right: 30px; /* Add padding to the right to make room for the delete button */
+  display: flex; /* Makes the tab a flex container */
+  justify-content: start; /* Aligns the number to the left */
+  align-items: center; /* Centers items vertically */
+  position: relative; /* Ensures the positioning context for the delete button */
+}
+
+.delete-page-btn {
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px; /* Adjust the font size of the icon inside the button */
+  padding: 2px 5px; /* Reduce padding to decrease overall button size */
+  background-color: transparent; /* Optional: make the button background transparent */
+  border: none; /* Remove border if not needed */
+  cursor: pointer; /* Ensure it's clear the button is clickable */
+}
+
+.delete-page-btn i {
+  font-size: 12px; /* Adjust the font size of the icon */
+  color: #FF69B4;
+}
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Output Organizer</title>
+  </head>
+  <body>
+    <header class="pages-container">
+      <ul class="pages">
+        <li
+          class="page active"
+          data-page-idx="0"
+          onclick="changePageHandler(event)"
+        >
+          1
+          <button class="delete-page-btn hidden"><i class="bi bi-x"></i></button>
+        </li>
+        <li class="page add-new-page-btn" onclick="addNewPageHandler(event)">
+          <i class="bi bi-plus"></i>
+        </li>
+      </ul>
+    </header>
+
+    <main class="main-container">
+      <div class="main-container-top">
+        <form
+          action=""
+          class="text-block-form"
+          onsubmit="addTextBlockHandler(event)"
+        >
+          <textarea
+            class="text-block-inp"
+            placeholder="
+            Use the + to create multiple pages.
+
+            Paste your output here, then press submit.
+            
+            You can manipulate the order of the output by dragging and dropping or using the arrows.
+
+            When copied, the [code]<pre> tags will automatically be added to each separate block."
+
+            required
+          ></textarea>
+          <button class="text-block-submit-btn">Submit</button>
+        </form>
+      </div>
+      <div class="main-container-bottom">
+        <div class="indexes-wrapper">
+          <h3 class="indexes-heading">INDEX</h3>
+          <ul class="indexes-list">
+            <!-- Index items will be dynamically added here -->
+          </ul>
+        </div>
+        <div class="text-blocks-wrapper">
+          <h3 class="text-blocks-heading">OUTPUT</h3>
+          <ul class="text-blocks-list">
+            <!-- Text block items will be dynamically added here -->
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
