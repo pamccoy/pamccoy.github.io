@@ -27,6 +27,19 @@
 
     <main class="main-container">
       <div class="main-container-top">
+        <button id="clearAllBtn" class="pink-btn">Clear All</button>
+        <button id="timeZonesBtn" class="light-faded-green-btn">The Time</button>
+        <div id="timeZonesTable" class="time-zones-table hidden">
+            <table>
+                <tr><td>US-West (GMT-7)</td><td id="time-US-West"></td></tr>
+                <tr><td>Denver (GMT-6)</td><td id="time-Denver"></td></tr>
+                <tr><td>UTC (GMT)</td><td id="time-UTC"></td></tr>
+                <tr><td>Amsterdam (GMT+1)</td><td id="time-Amsterdam"></td></tr>
+                <tr><td>India (GMT+5:30)</td><td id="time-India"></td></tr>
+                <tr><td>Singapore (GMT+8)</td><td id="time-Singapore"></td></tr>
+                <tr><td>Korea (GMT+9)</td><td id="time-Korea"></td></tr>
+            </table>
+          </div>
         <form
           action=""
           class="text-block-form"
@@ -63,7 +76,3 @@
         </div>
       </div>
     </main>
-
-    <script src="main.js"></script>
-  </body>
-</html>
