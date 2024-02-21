@@ -140,3 +140,55 @@ function onDropItem(e) {
 function truncateText(text, maxLength) {
   return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  const clearAllBtn = document.getElementById('clearAllBtn'); // Select the Clear All button
+
+  clearAllBtn.addEventListener('click', function() { // Add click event listener
+    location.reload(); // Reload the page
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const updateTimeZones = () => {
+    const timeZones = [
+      { elementId: 'time-US-West', timeZone: 'America/Los_Angeles' },
+      { elementId: 'time-Denver', timeZone: 'America/Denver' },
+      { elementId: 'time-UTC', timeZone: 'UTC' },
+      { elementId: 'time-Amsterdam', timeZone: 'Europe/Amsterdam' },
+      { elementId: 'time-India', timeZone: 'Asia/Kolkata' },
+      { elementId: 'time-Korea', timeZone: 'Asia/Seoul' },
+      { elementId: 'time-Singapore', timeZone: 'Asia/Singapore' },
+    ];
+
+    timeZones.forEach(({ elementId, timeZone }) => {
+      const now = new Date();
+
+      const timeFormatOptions = {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        timeZone: timeZone,
+        hour12: false // Adjust based on preference
+      };
+      const dateFormatOptions = {
+        weekday: 'short',
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric',
+        timeZone: timeZone
+      };
+
+      const timeFormatter = new Intl.DateTimeFormat('en-US', timeFormatOptions);
+      const dateFormatter = new Intl.DateTimeFormat('en-US', dateFormatOptions);
+
+      const timeString = timeFormatter.format(now);
+      const dateString = dateFormatter.format(now);
+
+      document.getElementById(elementId).textContent = `${timeString} on ${dateString}`;
+    });
+  };
+
+  const timeZonesBtn = document.getElementById('timeZonesBtn');
+  timeZonesBtn.addEventListener('mouseenter', updateTimeZones);
+});
