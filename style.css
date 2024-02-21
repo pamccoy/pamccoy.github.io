@@ -20,6 +20,7 @@ body {
 .main-container {
   max-width: 1170px;
   margin: auto;
+  margin-top: -16px;
   padding: 0 16px;
 }
 
@@ -194,3 +195,56 @@ body {
   color: #FF69B4;
 }
 
+.light-faded-green-btn {
+    width: 160px;
+    padding: 16px;
+    background-color: #1c64f2; /* Blue color for normal buttons */
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 16px;
+  }
+  
+  .light-faded-green-btn {
+    background-color: #ccffcc; /* Light faded green color */
+    color: #333; /* Darker text color for better contrast */
+    margin-left: 8px; /* Space between this and the Clear All button */
+  }
+
+  .pink-btn {
+    width: 160px;
+    padding: 16px;
+    background-color: #FF69B4; 
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 16px;
+  }
+
+  .time-zones-table {
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease, visibility 0s 0.5s;
+  }
+  
+  #timeZonesBtn:hover + .time-zones-table {
+    max-height: 500px; /* Adjust based on the content size */
+    visibility: visible;
+    opacity: 1;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    margin-bottom: 16px;
+  }
+  
+  .time-zones-table td:first-child {
+    padding-right: 20px; /* Adds space on the right of the first column */
+  }
+  
+  .time-zones-table td:last-child {
+    padding-left: 20px; /* Adds space on the left of the second column (optional) */
+  }
